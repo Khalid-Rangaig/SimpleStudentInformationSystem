@@ -35,7 +35,7 @@ class Student:
             if txt_id.get() == "":
                 messagebox.showerror("Error", "The entries are not complete")
                 return
-            x = [txt_id.get(), txt_course.get(), txt_name.get(), combo_year.get(), combo_gender.get()]
+            x = [txt_id.get(), txt_name.get(), txt_course.get(), combo_year.get(), combo_gender.get()]
             self.create(x)
             viewList()
             clear()
@@ -100,7 +100,7 @@ class Student:
         lbl_course = Label(Manage_Frame, text="Course", bg="Red1", fg="black", font=("Calibri", 20, "italic"))
         lbl_course.grid(row=2, column=0, pady=10, padx=20, sticky="w")
 
-        txt_course = Entry(Manage_Frame, font=("times new roman", 16, "bold"), bd=1, relief=GROOVE)
+        txt_course = Entry(Manage_Frame, font=("Calibri", 16, "bold"), bd=1, relief=GROOVE)
         txt_course.grid(row=2, column=2, pady=10, padx=20, sticky="w")
 
         lbl_name = Label(Manage_Frame, text="Name", bg="Red1", fg="black", font=("Calibri",20,"italic" ))
@@ -112,7 +112,7 @@ class Student:
         lbl_year = Label(Manage_Frame, text="Year Level", bg="Red1", fg="black", font=("Calibri", 20,"italic" ))
         lbl_year.grid(row=4, column=0, pady=10, padx=20, sticky="w")
 
-        combo_year = ttk.Combobox(Manage_Frame, font=("times new roman", 10, "bold"), state='readonly')
+        combo_year = ttk.Combobox(Manage_Frame,width=29, font=("Calibri", 10, "bold"), state='readonly')
         combo_year['values'] = ("", "1st Year", "2nd Year", "3rd Year", "4th Year")
         combo_year.grid(row=4, column=2, pady=10, padx=20)
         combo_year.current(0)
@@ -120,7 +120,7 @@ class Student:
         lbl_gender = Label(Manage_Frame, text="Gender", bg="Red1", fg="black", font=("Calibri", 20, "italic"))
         lbl_gender.grid(row=5, column=0, pady=10, padx=20, sticky="w")
 
-        combo_gender = ttk.Combobox(Manage_Frame, font=("times new roman", 10, "bold"), state='readonly')
+        combo_gender = ttk.Combobox(Manage_Frame,width=29, font=("Calibri", 10, "bold"), state='readonly')
         combo_gender['values'] = ("", "Male", "Female", "Other")
         combo_gender.grid(row=5, column=2, pady=10, padx=20)
         combo_gender.current(0)
@@ -142,11 +142,11 @@ class Student:
 
         #Detail Frame
 
-        Detail_Frame = Frame(self.root, bd=4, relief=RIDGE, bg="White")
+        Detail_Frame = Frame(self.root, bd=4, relief=RIDGE, bg="Red1")
         Detail_Frame.place(x=520, y=95, width=795, height=555)
 
 
-        txt_search = Entry(Detail_Frame, width=20, font=("Calibri", 10, "italic"), bd=2, relief=GROOVE)
+        txt_search = Entry(Detail_Frame, width=30, font=("Calibri", 15, "italic"), bd=2, relief=GROOVE)
         txt_search.grid(row=0, column=3, pady=10, padx=20, sticky="w")
 
         searchbtn = Button(Detail_Frame, text="Search", bg="black", fg="white", width=20, pady=5, command= search).grid(row=0, column=4,
